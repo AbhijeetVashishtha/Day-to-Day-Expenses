@@ -9,7 +9,7 @@ let listno = 0;
 window.addEventListener("DOMContentLoaded", async(event) => {
     event.preventDefault();
     try{
-        let response = await axios.get("https://52.90.174.162:4000/expense/getAllUrl", {headers: {"Authorization": token}});
+        let response = await axios.get("http://52.90.174.162:4000/expense/getAllUrl", {headers: {"Authorization": token}});
         if(response.status === 200){
             console.log(response);
             showUrls(response.data);
@@ -37,7 +37,7 @@ function showUrls(data) {
 document.getElementById('ListOfUrl').addEventListener('click', async(event) => {
     event.preventDefault();
     try{
-        const response = await axios.get('https://52.90.174.162:4000/expense/download', {headers: {"Authorization": token}})
+        const response = await axios.get('http://52.90.174.162:4000/expense/download', {headers: {"Authorization": token}})
         if(response.status === 200){
             var a = document.createElement('a');
             a.href = response.data.fileUrl;

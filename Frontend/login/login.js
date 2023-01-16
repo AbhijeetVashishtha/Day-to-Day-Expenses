@@ -6,7 +6,7 @@ async function login(event){
             password: event.target.password.value
         }
         console.log(loginDetails);
-        const response = await axios.post("https://52.90.174.162:4000/user/login", loginDetails);
+        const response = await axios.post("http://52.90.174.162:4000/user/login", loginDetails);
         alert(response.data.message);
         console.log(response.data);
         localStorage.setItem('token', response.data.token);
