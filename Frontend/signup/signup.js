@@ -11,7 +11,7 @@ async function signup(event){
             password
         }
         console.log(signUpDetails);
-        const response = await axios.post("http://52.90.174.162:4000/user/signup", signUpDetails)
+        const response = await axios.post("http://localhost:4000/user/signup", signUpDetails)
         if(response.status === 200){
             window.location.href = "../login/login.html";
         }

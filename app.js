@@ -60,9 +60,9 @@ app.use('/purchase', purchaseRoutes);
 app.use('/premium', premiumUserRoutes);
 app.use('/password', forgotPassRoutes);
 
-app.use((req,res) => {
-    res.sendFile(path.join(__dirname, `Frontend/${req.url}`));
-})
+// app.use((req,res) => {
+//     res.sendFile(path.join(__dirname, `Frontend/${req.url}`));
+// })
 
 User.hasMany(Expense);
 Expense.belongsTo(User);
